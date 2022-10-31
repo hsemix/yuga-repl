@@ -1,9 +1,10 @@
 <?php
 
-namespace Yuga\Sockets\Providers;
+namespace Yuga\Repl\Providers;
 
+use Yuga\Repl\Console\ReplCommand;
 use Yuga\Providers\ServiceProvider;
-use Yuga\Sockets\Console\StartCommand;
+use Yuga\Repl\Console\ReplSmartCommand;
 use Yuga\Interfaces\Application\Application;
 use Yuga\Providers\Shared\MakesCommandsTrait;
 
@@ -21,11 +22,15 @@ class ReplServiceProvider extends ServiceProvider
     public function load(Application $app)
     {
         if ($app->runningInConsole()) {
-            $app->singleton('command.sockets.start', function ($app) {
+            $app->singleton('command.repl', function ($app) {
                 return new ReplCommand;
             });
 
-            $this->commands('command.sockets.start');
+            $app->singleton('command.repl.smart', function ($app) {
+                return new ReplSmartCommand;
+            });
+
+            $this->commands('command.repl', 'command.repl.smart');
         }
     }
 

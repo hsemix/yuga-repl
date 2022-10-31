@@ -1,7 +1,7 @@
 {
     "name": "yuga/repl",
-    "description": "The Yuga Framework Subscriptions/Prices Package.",
-    "keywords": ["framework", "Yuga", "Payments", "Subscriptions"],
+    "description": "Interact with your Yuga Application.",
+    "keywords": ["framework", "Yuga", "Repl", "PHP Repl"],
     "license": "MIT",
     "homepage": "https://yuga-framework.gitbook.io/documentation/repl",
     "authors": [
@@ -28,7 +28,7 @@
     "extra": {
         "yuga": {
             "providers": [
-                "Yuga\\Providers\\ReplServiceProvider"
+                "Yuga\\Repl\\Providers\\ReplServiceProvider"
             ]
         }
     },
