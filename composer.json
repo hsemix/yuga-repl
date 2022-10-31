@@ -1,0 +1,39 @@
+{
+    "name": "yuga/repl",
+    "description": "The Yuga Framework Subscriptions/Prices Package.",
+    "keywords": ["framework", "Yuga", "Payments", "Subscriptions"],
+    "license": "MIT",
+    "homepage": "https://yuga-framework.gitbook.io/documentation/repl",
+    "authors": [
+        {
+            "name": "Hamidouh Semix",
+            "email": "semix.hamidouh@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">= 7.1",
+        "moneyphp/money": "^4.0",
+        "stripe/stripe-php": "^7.39|^8.0|^9.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5|^8.0",
+        "yuga/framework": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yuga\\Repl\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "yuga": {
+            "providers": [
+                "Yuga\\Providers\\ReplServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
