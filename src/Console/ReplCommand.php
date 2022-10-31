@@ -25,6 +25,7 @@ class ReplCommand extends Command
      */
     public function handle()
     {
+        $this->info("Yuga Interactive Terminal >> v1.1.0");
         $input = $this->prompt();
         $buffer = null;
 
