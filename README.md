@@ -1,1 +1,1 @@
-# A Package to allow you Interact with your Yuga Application
+# Interact with your Yuga Application
