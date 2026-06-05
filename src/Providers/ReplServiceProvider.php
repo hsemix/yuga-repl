@@ -22,13 +22,9 @@ class ReplServiceProvider extends ServiceProvider
     public function load(Application $app)
     {
         if ($app->runningInConsole()) {
-            $app->singleton('command.repl', function ($app) {
-                return new ReplCommand;
-            });
+            $app->singleton('command.repl', fn($app) => new ReplCommand);
 
-            $app->singleton('command.repl.smart', function ($app) {
-                return new ReplSmartCommand;
-            });
+            $app->singleton('command.repl.smart', fn($app) => new ReplSmartCommand);
 
             $this->commands('command.repl', 'command.repl.smart');
         }

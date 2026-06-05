@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yuga\Repl\Console;
 
 use Yuga\Console\Command;
@@ -39,7 +41,9 @@ class ReplCommand extends Command
                     eval($buffer);
                     $response = ob_get_clean();
                     
-                    if (!empty($response)) $this->output->writeln(trim($response));
+                    if (!in_array($response, ['', '0', false], true)) {
+                        $this->output->writeln(trim($response));
+                    }
 
                     $buffer = null;
                 }
@@ -52,7 +56,7 @@ class ReplCommand extends Command
             $input = $this->prompt($buffer !== null);
         }
 
-        if ($input == 'exit;') exit;
+        exit;
     }
 
     /**
